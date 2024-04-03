@@ -1,0 +1,43 @@
+
+.palette {
+  --color-box: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(var(--palette-columns), var(--color-box));
+  justify-content: center;
+  /*background: rgba(255,255,255,0.1);*/
+  /*gap: 1px;*/
+}
+
+.palette-color-box {
+  position: relative;
+  width: var(--color-box);
+  aspect-ratio: 1;
+  background: var(--color-box-bg);
+
+  .palette-color-hover-box {
+    z-index: 10;
+    position: absolute;
+    background: var(--color-box-bg);
+    inset: 0;
+    border-radius: 10px;
+    opacity: 0.3;
+    border: 0 solid black;
+
+    transition-property: opacity, transform;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+
+    pointer-events: none;
+  }
+
+  &:hover {
+    .palette-color-hover-box {
+      z-index: 20;
+      opacity: 1;
+      transform: scale(1.4);
+      border-radius: 10px;
+      box-shadow: 0 0px 20px var(--shadow-color);
+      /*border-width: 1px;*/
+    }
+  }
+}

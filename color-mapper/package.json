@@ -1,0 +1,22 @@
+{
+  "name": "color-mapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "pnpm build-dev && node dist/example.js fix/palette.clr fix/Dark.icls ",
+    "build": "esbuild src/* --outdir=dist --sourcemap=inline --target=node20 --platform=node --format=esm",
+    "build:w": "esbuild src/* --outdir=dist --sourcemap=inline --target=node20 --platform=node --format=esm --watch",
+    "build:d": "esbuild src/* --outdir=dist --sourcemap=inline --target=node20 --platform=node --format=esm"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.12.3",
+    "colorjs.io": "^0.5.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.4.3"
+  }
+}
